@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-12">
+      <header class="text-center">
+        <div class="title">
+Programming Words of Wisdom!
+        </div>
+        <h1>
+          (Famous Quote Generator)
+            </h1>
+
+      </header>
+
+
+      <!-- Header/Title -->
+
+      <!-- START - Cloud 1 (black) -->
+      <div class="cloud cloud-1">
+
+        <div id="quoteBox1"> OKAY?</div>
+        <div id=" quoteBox">
+          <p id="quote"></p>
+          <span class="bump bump-1"></span>
+          <span class="bump bump-2"></span>
+          <span class="bump bump-3"></span>
+          <span class="bump bump-4"></span>
+          <span class="bump bump-5"></span>
+          <span class="bump bump-6"></span>
+          <span class="bump bump-7"></span>
+          <span class="bump bump-8"></span>
+        </div>
+      </div>
+
+
+      <!-- END - Cloud 1 (black) -->
+
+      <!-- START - Cloud 2 (white) -->
+
+      <div class="cloud cloud-2">
+
+        <div id="quoteBox2">OKAY.</div>
+
+        <p id="character"></p>
+        <span class="bump bump-1"></span>
+        <span class="bump bump-2"></span>
+        <span class="bump bump-3"></span>
+        <span class="bump bump-4"></span>
+        <span class="bump bump-5"></span>
+        <span class="bump bump-6"></span>
+        <span class="bump bump-7"></span>
+        <span class="bump bump-8"></span>
+      </div>
+
+
+      <!-- END - Cloud 2 (white) -->
+
+      <!--Twitter button + NEW quote button -->
+    
+        <div class="buttons">
+        <a id="tweetButton" target="_blank" rel="noopener noreferrer" class="btn btn-default btn-sm" onclick='tweetQuote()'><img class="tweetLogo" src="https://greenteamedinburgh.files.wordpress.com/2014/02/twitter-button.png" alt="Twitter"><p><a onclick='tweetQuote()' href="http://twitter.com/?status=<?php the_title(); ?>%20by%20@csswizardry%20<?php the_permalink() ?>" target="_blank">Please Tweet this article</a>, it'd be surely appreciated.</p></a>
+
+<!--Source of Twitter Image: https://greenteamedinburgh.files.wordpress.com/2014/02/twitter-button-->
+          
+          
+        <button class="quote-btn btn btn-primary" onclick="newQuote()">New Quote</button>
+      </div>
+
+      <!--Twitter button + NEW quote button -->
+ 
+      <!-- Footer -->
+      <div class="footer">
+        <footer class="text-center">
+          <hr>
+          <p>Written and coded by Celine Murakami</p>
+        </footer>
+      </div>
+      </div>
+    </div>
+    </div>
+
+    
+<!-- Font style -->
+<style>
+@import url(https://fonts.googleapis.com/css?family=Loved+by+the+King);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+/* Font style */
+body {
+  margin-top: 50;
+  background: #12C3F3;
+  font-family: 'Loved by the King', 'Open Sans';
+  line-height: 1.5;
+  padding: 10px 10px;
+}
+.text-center h1 {
+  font-weight: bold;
+  font-family: 'Loved by the King', 'Open Sans';
+    text-align:center;
+}
+.title {
+  color: #fff;
+  font-family: 'Loved by the King', 'Open Sans';
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 80px;
+}
+a:visited {
+  color: floralwhite;
+    }
+ a:active {
+  color: blue;
+}
+    
+/* clouds spec bellow... dont change anything...*/
+.cloud {
+  position: relative;
+  background: #000;
+  width: 250px;
+  height: 110px;
+  margin: 85px auto;
+}
+.bump {
+  background: #000;
+  width: 33.33%;
+  height: 66.67%;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+.bump-1 {
+  top: -16.5%;
+  left: -10%;
+  width: 55%;
+  height: 100%;
+}
+.bump-2 {
+  top: -20%;
+  left: 20%;
+  height: 100%;
+  width: 60%;
+}
+.bump-3 {
+  top: -9.7%;
+  left: 60%;
+  height: 100%;
+  width: 50%;
+}
+.bump-4 {
+  bottom: -80%;
+  left: -10%;
+  width: 60%;
+  height: 100%;
+}
+.bump-5 {
+  bottom: -70%;
+  left: 30%;
+  height: 150%;
+  width: 55%;
+}
+.bump-6 {
+  bottom: -55%;
+  left: 65%;
+  height: 80%;
+  width: 50%;
+}
+.bump-7 {
+  bottom: 16.5%;
+  left: -20%;
+  height: 100%;
+  width: 70%;
+  top: 25%;
+}
+.bump-8 {
+  top: 20%;
+  right: -20%;
+  height: 100%;
+  width: 100%;
+}
+.cloud-1 {
+  z-index: 200;
+  width: 300px;
+  height: 150px;
+}
+.cloud-2 {
+  z-index: 100;
+  background: #fff;
+  margin-top: 50px;
+  margin-bottom: 125px;
+}
+.cloud-2 .bump {
+  background: #fff;
+}
+/* Don't change anything above... clouds spec..*/
+/* -- QuoteBOX----*/
+#quote {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Loved by the King', 'Open Sans';
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+#character {
+  color: #000;
+  font-family: 'Loved by the King', 'Open Sans';
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 10px;
+}
+#quoteBox1 {
+  color: #fff;
+  font-family: 'Loved by the King', 'Open Sans';
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 100px;
+  padding-top: 25px;
+}
+#quoteBox {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+#quoteBox2 {
+  font-family: 'Loved by the King', 'Open Sans';
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 80px;
+  padding-top: 40px;
+}
+/*------------------------*/
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+/*------------------------*/
+/*buttons----*/
+.buttons {
+  margin-top: 10px;
+  text-decoration: none;
+  text-align: center;
+}
+.tweetLogo {
+  width: 50px;
+  height: 50px;
+  margin-right: -320px;
+ margin-bottom:-50px;
+    
+    tw:visited {
+  color: green;
+}
+    }
+    </style>
+<script>
+ var quotes = [
+  ["Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?", "- Brian W. Kernighan"],
+  ["I'm not a great programmer; I'm just a good programmer with great habits.", "- Kent Beck"],
+  ["On two occasions, I have been asked [by members of Parliament], 'Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?' I am not able to rightly apprehend the kind of confusion of ideas that could provoke such a question.", "- Charles Babbage"],
+  ["A language that doesn't affect the way you think about programming is not worth knowing.", "- Alan J. Perlis"],
+  ["The most disastrous thing that you can ever learn is your first programming language.", "- Alan Kay"],
+  ["We are looking at a society increasingly dependent on machines, yet decreasingly capable of making or even using them effectively.", "- Douglas Rushkoff"],
+  ["Talk is cheap. Show me the code.", "- Linus Torvalds"],
+   ["Programs must be written for people to read, and only incidentally for machines to execute", "- Harold Abelson"],
+   ["Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.", "- Rick Cook"],
+   ["That's the thing about people who think they hate computers. What they really hate is lousy programmers.", "- Larry Niven"],
+   ["Progress is possible only if we train ourselves to think about programs without thinking of them as pieces of executable code.", "- Edsger W. Dijkstra"],
+   ["Give a man a program, frustrate him for a day. \nTeach a man to program, frustrate him for a lifetime.", "- Waseem Latif"],
+   ["Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.", "- Max Kanat-Alexander"],
+   ["Programming is like sex. One mistake and you have to support it for the rest of your life.", "- Michael Sinz"],
+   ["Programmers are not to be measured by their ingenuity and their logic but by the completeness of their case analysis.", "-Alan J. Perlis"],
+   ["What kind of programmer is so divorced from reality that she thinks she'll get complex software right the first time?", "- James Alan Gardner"],
+   ["Premature optimization is the root of all evil.", "- Donald Knuth"],
+   ["Every reader should ask himself periodically 'Toward what end, toward what end?' -- but do not ask it too often lest you pass up the fun of programming for the constipation of bittersweet philosophy.", "- Alan J. Perlis"],
+   ["Programmers are not mathematicians, no matter how much we wish and wish for it.", "- Richard P. Gabriel"],
+   ["It is not only the violin that shapes the violinist, we are all shaped by the tools we train ourselves to use, and in this respect programming languages have a devious influence: they shape our thinking habits.", "- Edsger W. Dijkstra"],
+   ["Kids who are good at traditional school—repeating rote concepts and facts on a test—can fall apart in a situation where that isn’t enough. Programming rewards the experimental, curious mind.", "- Ketil Moland Olsen"],
+   ["I’ve learned over the past few years that comments should be considered smells.", "- Ron Lisle"],
+   ["Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program", "- Linus Torvalds"],
+   ["If builders built buildings the way programmers wrote programs, then the first woodpecker that came along wound destroy civilization", "- Gerald Weinberg"],
+   ["The Analytical Engine weaves algebraic patterns, just as the Jacquard loom weaves flowers and leaves", "- Ada Lovelace"],
+];t
+var index = [];
+var random;
+function newQuote() {
+  random = Math.floor(Math.random() * quotes.length);
+  document.getElementById("quoteBox1").innerHTML = "";
+  document.getElementById("quoteBox2").innerHTML = "";
+  document.getElementById("quote").innerHTML = quotes[random][0];
+  document.getElementById("character").innerHTML = quotes[random][1];
+  return quotes[random];
+  newQuote();
+}
+    
+    
+/* TWITTER BUTTON*/
+function tweetQuote() {
+  window.open('https://twitter.com/intent/tweet?text=' + quotes[random], '', 'width=800, height=600, left=400, top=20');
+}   
+    </script>
+</html>   
